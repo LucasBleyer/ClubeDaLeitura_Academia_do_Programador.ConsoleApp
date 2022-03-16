@@ -26,5 +26,25 @@ namespace ClubeDaLeitura.ConsoleApp
             }
             return posicao;
         }
+
+        public void Registrar()
+        {
+
+        }
+
+        public void Deletar()
+        {
+            
+        }
+
+        public void Editar()
+        {
+            
+        }
+
+        public void Vizualizar()
+        {
+            
+        }
     }
 }

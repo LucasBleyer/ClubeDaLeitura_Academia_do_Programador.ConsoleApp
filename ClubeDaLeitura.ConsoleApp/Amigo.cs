@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClubeDaLeitura.ConsoleApp
 {
-    internal class Caixa
+    internal class Amigo
     {
-        public string cor;
-        public string etiqueta;
-        public int numero;
+        public string nome;
+        public string nome_responsavel;
+        public string telefone;
+        public string endereco;
 
         public void Registrar()
         {
@@ -32,5 +33,4 @@ namespace ClubeDaLeitura.ConsoleApp
 
         }
     }
-
 }
