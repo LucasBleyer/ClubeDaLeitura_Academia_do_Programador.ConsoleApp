@@ -69,9 +69,9 @@ namespace ClubeDaLeitura.ConsoleApp
 
         static void MenuRevista()
         {
-            Revista revista = new Revista();
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+            Revista revista = new Revista();
             switch (opcao_crud)
             {
                 case '1':
@@ -91,9 +91,9 @@ namespace ClubeDaLeitura.ConsoleApp
 
         static void MenuCaixa()
         {
-            Caixa caixa = new Caixa();
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+            Caixa caixa = new Caixa();
             switch (opcao_crud)
             {
                 case '1':
@@ -113,9 +113,9 @@ namespace ClubeDaLeitura.ConsoleApp
 
         static void MenuAmigo()
         {
-            Amigo amigo = new Amigo();
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+            Amigo amigo = new Amigo();
             switch (opcao_crud)
             {
                 case '1':
@@ -135,9 +135,9 @@ namespace ClubeDaLeitura.ConsoleApp
         }
         static void MenuEmprestimo()
         {
-            Emprestimo emprestimo = new Emprestimo();
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+            Emprestimo emprestimo = new Emprestimo();
             switch (opcao_crud)
             {
                 case '1':
@@ -154,7 +154,6 @@ namespace ClubeDaLeitura.ConsoleApp
                     break;
             }
         }
-
         #endregion
 
         #region Métodos Auxiliares
