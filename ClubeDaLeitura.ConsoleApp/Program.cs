@@ -59,13 +59,13 @@ namespace ClubeDaLeitura.ConsoleApp
                     InserirTituloLimpar("Cadastro de Amigos");
                     MenuAmigo();
                     break;
-                    
                 case '4':
                     InserirTituloLimpar("Cadastro de Empréstimos");
                     MenuEmprestimo();
                     break;
             }
         }
+        #endregion
 
         static void MenuRevista()
         {
@@ -154,7 +154,6 @@ namespace ClubeDaLeitura.ConsoleApp
                     break;
             }
         }
-        #endregion
 
         #region Métodos Auxiliares
 
