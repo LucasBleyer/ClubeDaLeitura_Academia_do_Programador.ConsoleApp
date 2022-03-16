@@ -15,22 +15,34 @@ namespace ClubeDaLeitura.ConsoleApp
 
         public void Registrar()
         {
-
+            InserirTituloLimparTela("Registrar Amigos");
+            Console.ReadKey();
         }
 
         public void Deletar()
         {
-
+            InserirTituloLimparTela("Deletar Amigos");
+            Console.ReadKey();
         }
 
         public void Editar()
         {
-
+            InserirTituloLimparTela("Editar Amigos");
+            Console.ReadKey();
         }
 
         public void Vizualizar()
         {
-
+            InserirTituloLimparTela("Vizualizar Amigos");
+            Console.ReadKey();
+        }
+        public void InserirTituloLimparTela(string mensagem)
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
         }
     }
 }

@@ -13,38 +13,36 @@ namespace ClubeDaLeitura.ConsoleApp
         public DateTime ano_revista;
         public Caixa[] caixas;
 
-        public int DefinirPosicaoParaCaixa()
-        {
-            int posicao = -1;//caso não exista posicao retorna -1
-            for (int i = 0; i < caixas.Length; i++)
-            {
-                if (caixas[i] == null)
-                {
-                    posicao = i;
-                    break;
-                }
-            }
-            return posicao;
-        }
-
         public void Registrar()
         {
-
+            InserirTituloLimparTela("Registrar Revistas");
+            Console.ReadKey();
         }
 
         public void Deletar()
         {
-            
+            InserirTituloLimparTela("Deletar Revistas");
+            Console.ReadKey();
         }
 
         public void Editar()
         {
-            
+            InserirTituloLimparTela("Editar Revistas");
+            Console.ReadKey();
         }
 
         public void Vizualizar()
         {
-            
+            InserirTituloLimparTela("Vizualizar Revistas");
+            Console.ReadKey();
+        }
+        public void InserirTituloLimparTela(string mensagem)
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
         }
     }
 }

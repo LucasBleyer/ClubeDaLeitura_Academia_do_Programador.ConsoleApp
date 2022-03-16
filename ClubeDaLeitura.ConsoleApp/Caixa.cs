@@ -14,22 +14,34 @@ namespace ClubeDaLeitura.ConsoleApp
 
         public void Registrar()
         {
-
+            InserirTituloLimparTela("Registrar Caixas");
+            Console.ReadKey();
         }
 
         public void Deletar()
         {
-
+            InserirTituloLimparTela("Deletar Caixas");
+            Console.ReadKey();
         }
 
         public void Editar()
         {
-
+            InserirTituloLimparTela("Editar Caixas");
+            Console.ReadKey();
         }
 
         public void Vizualizar()
         {
-
+            InserirTituloLimparTela("Vizualizar Caixas");
+            Console.ReadKey();
+        }
+        public void InserirTituloLimparTela(string mensagem)
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
         }
     }
 

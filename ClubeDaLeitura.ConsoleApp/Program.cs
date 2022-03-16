@@ -13,26 +13,26 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             while (true)
             {
-                char opcao_menu_principal = MenuPrincipal();
-                if (opcao_menu_principal == 's')
+                char opcao = MenuPrincipal();
+                if (opcao == 's')
                 {
                     break;
                 }
                 else
                 {
-                    VerificaOpcaoMenuPrincipal(opcao_menu_principal);
+                    MenusSecundarios(opcao);
                 }
             }
         }
 
-        #region Métodos Menu Principal
+        #region Métodos dos Menus
         static char MenuPrincipal()
         {
             char opcao_menu_principal;
             do
             {
                 InserirTituloLimpar("Clube da Leitura");
-                Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Empréstimo | [4]Amigo | [s]Sair");
+                Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Amigo | [4]Empréstimo | [s]Sair");
                 Console.Write("Digite uma opção: ");
                 opcao_menu_principal = Convert.ToChar(Console.ReadLine().ToLower());
                 if (opcao_menu_principal == 's')
@@ -43,54 +43,118 @@ namespace ClubeDaLeitura.ConsoleApp
             return opcao_menu_principal;
         }
 
-        static void VerificaOpcaoMenuPrincipal(char opcao_menu_principal)
+        static void MenusSecundarios(char opcao_menus_secundarios)
         {
-            switch (opcao_menu_principal)
+            switch (opcao_menus_secundarios)
             {
                 case '1':
+                    InserirTituloLimpar("Cadastro de Revistas");
                     MenuRevista();
                     break;
                 case '2':
+                    InserirTituloLimpar("Cadastro de Caixas");
                     MenuCaixa();
                     break;
                 case '3':
-                    MenuEmprestimo();
-                    break;
-                case '4':
+                    InserirTituloLimpar("Cadastro de Amigos");
                     MenuAmigo();
+                    break;
+                    
+                case '4':
+                    InserirTituloLimpar("Cadastro de Empréstimos");
+                    MenuEmprestimo();
                     break;
             }
         }
-        #endregion
 
-        #region Métodos Menus Secundários
-        static char MenuRevista()
+        static void MenuRevista()
         {
-            char opcao_menu_principal;
-            InserirTituloLimpar("Revista");
-            return MostrarOpcoesCRUD(out opcao_menu_principal);
+            Revista revista = new Revista();
+            char opcao_crud;
+            MostrarOpcoesCRUD(out opcao_crud);
+            switch (opcao_crud)
+            {
+                case '1':
+                    revista.Registrar();
+                    break;
+                case '2':
+                    revista.Deletar();
+                    break;
+                case '3':
+                    revista.Editar();
+                    break;
+                case '4':
+                    revista.Vizualizar();
+                    break;
+            }
         }
 
-        static char MenuCaixa()
+        static void MenuCaixa()
         {
-            char opcao_menu_principal;
-            InserirTituloLimpar("Caixa");
-            return MostrarOpcoesCRUD(out opcao_menu_principal);
-        }
-        static char MenuEmprestimo()
-        {
-            char opcao_menu_principal;
-            InserirTituloLimpar("Empréstimo");
-            return MostrarOpcoesCRUD(out opcao_menu_principal);
+            Caixa caixa = new Caixa();
+            char opcao_crud;
+            MostrarOpcoesCRUD(out opcao_crud);
+            switch (opcao_crud)
+            {
+                case '1':
+                    caixa.Registrar();
+                    break;
+                case '2':
+                    caixa.Deletar();
+                    break;
+                case '3':
+                    caixa.Editar();
+                    break;
+                case '4':
+                    caixa.Vizualizar();
+                    break;
+            }
         }
 
-        static char MenuAmigo()
+        static void MenuAmigo()
         {
-            char opcao_menu_principal;
-            InserirTituloLimpar("Amigo");
-            return MostrarOpcoesCRUD(out opcao_menu_principal);
+            Amigo amigo = new Amigo();
+            char opcao_crud;
+            MostrarOpcoesCRUD(out opcao_crud);
+            switch (opcao_crud)
+            {
+                case '1':
+                    amigo.Registrar();
+                    break;
+                case '2':
+                    amigo.Deletar();
+                    break;
+                case '3':
+                    amigo.Editar();
+                    break;
+                case '4':
+                    amigo.Vizualizar();
+                    break;
+            }
 
         }
+        static void MenuEmprestimo()
+        {
+            Emprestimo emprestimo = new Emprestimo();
+            char opcao_crud;
+            MostrarOpcoesCRUD(out opcao_crud);
+            switch (opcao_crud)
+            {
+                case '1':
+                    emprestimo.Registrar();
+                    break;
+                case '2':
+                    emprestimo.Deletar();
+                    break;
+                case '3':
+                    emprestimo.Editar();
+                    break;
+                case '4':
+                    emprestimo.Vizualizar();
+                    break;
+            }
+        }
+
         #endregion
 
         #region Métodos Auxiliares
