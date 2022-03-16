@@ -24,7 +24,6 @@ namespace ClubeDaLeitura.ConsoleApp
                 }
             }
         }
-
         #region Métodos dos Menus
         static char MenuPrincipal()
         {
@@ -67,24 +66,26 @@ namespace ClubeDaLeitura.ConsoleApp
         }
         #endregion
 
+        #region Métodos CRUD de cada Classe
         static void MenuRevista()
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
-            Revista revista = new Revista();
+            Revista nova_revista = new Revista();
             switch (opcao_crud)
             {
+
                 case '1':
-                    revista.Registrar();
+                    nova_revista.Registrar(revistas, nova_revista);
                     break;
                 case '2':
-                    revista.Deletar();
+                    nova_revista.Deletar(revistas);
                     break;
                 case '3':
-                    revista.Editar();
+                    nova_revista.Editar();
                     break;
                 case '4':
-                    revista.Vizualizar();
+                    nova_revista.Vizualizar(revistas);
                     break;
             }
         }
@@ -131,7 +132,6 @@ namespace ClubeDaLeitura.ConsoleApp
                     amigo.Vizualizar();
                     break;
             }
-
         }
         static void MenuEmprestimo()
         {
@@ -154,9 +154,6 @@ namespace ClubeDaLeitura.ConsoleApp
                     break;
             }
         }
-
-        #region Métodos Auxiliares
-
         static char MostrarOpcoesCRUD(out char opcao_crud)
         {
             do
@@ -171,7 +168,9 @@ namespace ClubeDaLeitura.ConsoleApp
             } while (opcao_crud != '1' && opcao_crud != '2' && opcao_crud != '3' && opcao_crud != '4');
             return opcao_crud;
         }
+        #endregion
 
+        #region Métodos Auxiliares
         static void InserirTituloLimpar(string mensagem)
         {
             Console.Clear();
