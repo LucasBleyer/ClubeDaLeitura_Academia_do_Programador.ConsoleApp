@@ -60,6 +60,8 @@ namespace ClubeDaLeitura.ConsoleApp
 
             Console.Write("Informe a novo data de fabricação: ");
             revistas[id_editada].ano_revista = Console.ReadLine();
+
+            Console.WriteLine("Revista editada!");
         }
 
         public void Vizualizar(Revista[] revistas)
