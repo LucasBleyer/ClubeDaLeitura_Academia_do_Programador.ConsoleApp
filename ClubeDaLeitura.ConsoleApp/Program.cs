@@ -32,7 +32,7 @@ namespace ClubeDaLeitura.ConsoleApp
             {
                 InserirTituloLimparTela("Clube da Leitura");
                 Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Amigo | [4]Empréstimo | [s]Sair");
-                Console.Write("Digite uma opção: ");
+                Console.Write("\nDigite uma opção: ");
                 opcao_menu_principal = Convert.ToChar(Console.ReadLine().ToLower());
                 if (opcao_menu_principal == 's')
                 {
@@ -178,8 +178,8 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             do
             {
-                Console.WriteLine("\n[1] Registrar | [2] Deletar | [3] Editar | [4] Vizualizar | [s] Voltar");
-                Console.Write("Digite uma opção: ");
+                Console.WriteLine("\n[1]Registrar | [2]Deletar | [3]Editar | [4]Vizualizar | [s]Voltar");
+                Console.Write("\nDigite uma opção: ");
                 opcao_crud = Convert.ToChar(Console.ReadLine().ToLower());
                 if (opcao_crud == 's')
                 {
@@ -194,9 +194,7 @@ namespace ClubeDaLeitura.ConsoleApp
         static void InserirTituloLimparTela(string mensagem)
         {
             Console.Clear();
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(mensagem);
+            Console.WriteLine("---------------------|" + mensagem + "|---------------------");
             Console.ResetColor();
         }
         #endregion
