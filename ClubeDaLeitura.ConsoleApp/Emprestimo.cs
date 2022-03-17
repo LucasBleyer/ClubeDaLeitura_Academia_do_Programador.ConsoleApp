@@ -10,39 +10,48 @@ namespace ClubeDaLeitura.ConsoleApp
     {
         public Amigo[] amigos;
         public Revista[] revistas;
-        public DateTime data_emprestimo;
-        public DateTime data_devolucao;
+        public string data_emprestimo;
+        public string data_devolucao;
 
-        public void Registrar()
+        public void Registrar(Emprestimo[] emprestimos, Emprestimo novo_emprestimo)
         {
-            InserirTituloLimparTela("Registrar Empréstimos");
-            Console.ReadKey();
+            Console.WriteLine("Informe o data do empréstimo: ");
+            novo_emprestimo.data_emprestimo = Console.ReadLine();
+
+            Console.WriteLine("Informe a data prevista para a devolução da revista: ");
+            novo_emprestimo.data_devolucao = Console.ReadLine();
+
+            for (int i = 0; i < emprestimos.Length; i++)
+            {
+                if (emprestimos[i] == null)
+                {
+                    emprestimos[i] = novo_emprestimo;
+                    break;
+                }
+            }
+
         }
 
-        public void Deletar()
+        public void Deletar(Emprestimo[] emprestimos)
         {
-            InserirTituloLimparTela("Deletar Empréstimos");
-            Console.ReadKey();
+            Vizualizar(emprestimos);
+
+            Console.Write("Informe o ID do empréstimo a ser excluído: ");
+            int id_excluir = Convert.ToInt32(Console.ReadLine());
+
+            emprestimos[id_excluir] = null;
+
+            Console.WriteLine("Empréstimo Excluído!");
         }
 
-        public void Editar()
+        public void Editar(Emprestimo[] emprestimos)
         {
-            InserirTituloLimparTela("Editar Empréstimos");
-            Console.ReadKey();
+            Vizualizar(emprestimos);
         }
 
-        public void Vizualizar()
+        public void Vizualizar(Emprestimo[] emprestimos)
         {
-            InserirTituloLimparTela("Vizualizar Empréstimos");
-            Console.ReadKey();
-        }
-        public void InserirTituloLimparTela(string mensagem)
-        {
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(mensagem);
-            Console.ResetColor();
+
         }
     }
 }

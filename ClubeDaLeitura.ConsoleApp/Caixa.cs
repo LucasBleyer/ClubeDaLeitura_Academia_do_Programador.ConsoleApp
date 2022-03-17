@@ -50,16 +50,16 @@ namespace ClubeDaLeitura.ConsoleApp
             Vizualizar(caixas);
 
             Console.Write("\nInforme o ID da caixa a ser editada: ");
-            int id_editada = Convert.ToInt32(Console.ReadLine());
+            int id_editar = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Informe a nova cor da caixa: ");
-            caixas[id_editada].cor = Console.ReadLine();
+            caixas[id_editar].cor = Console.ReadLine();
 
             Console.Write("Informe a nova etiqueta da caixa: ");
-            caixas[id_editada].etiqueta = Console.ReadLine();
+            caixas[id_editar].etiqueta = Console.ReadLine();
 
             Console.Write("Informe o novo número da caixa: ");
-            caixas[id_editada].numero = Convert.ToInt32(Console.ReadLine());
+            caixas[id_editar].numero = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Caixa editada!");
         }

@@ -54,19 +54,19 @@ namespace ClubeDaLeitura.ConsoleApp
             Vizualizar(amigos);
 
             Console.Write("\nInforme o ID do amigo a ser editado: ");
-            int id_editada = Convert.ToInt32(Console.ReadLine());
+            int id_editar = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Informe o nome do amigo: ");
-            amigos[id_editada].nome = Console.ReadLine();
+            amigos[id_editar].nome = Console.ReadLine();
 
             Console.Write("Informe o nome do responsável: ");
-            amigos[id_editada].nome_responsavel = Console.ReadLine();
+            amigos[id_editar].nome_responsavel = Console.ReadLine();
 
             Console.Write("Informe o novo telefone do amigo: ");
-            amigos[id_editada].telefone = Console.ReadLine();
+            amigos[id_editar].telefone = Console.ReadLine();
 
             Console.Write("Informe o novo endereço do amigo: ");
-            amigos[id_editada].endereco = Console.ReadLine();
+            amigos[id_editar].endereco = Console.ReadLine();
 
             Console.WriteLine("Amigo editado!");
         }

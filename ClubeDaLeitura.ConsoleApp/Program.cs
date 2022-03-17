@@ -30,7 +30,7 @@ namespace ClubeDaLeitura.ConsoleApp
             char opcao_menu_principal;
             do
             {
-                InserirTituloLimpar("Clube da Leitura");
+                InserirTituloLimparTela("Clube da Leitura");
                 Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Amigo | [4]Empréstimo | [s]Sair");
                 Console.Write("Digite uma opção: ");
                 opcao_menu_principal = Convert.ToChar(Console.ReadLine().ToLower());
@@ -47,19 +47,19 @@ namespace ClubeDaLeitura.ConsoleApp
             switch (opcao_menus_secundarios)
             {
                 case '1':
-                    InserirTituloLimpar("Cadastro de Revistas");
+                    InserirTituloLimparTela("Cadastro de Revistas");
                     MenuRevista();
                     break;
                 case '2':
-                    InserirTituloLimpar("Cadastro de Caixas");
+                    InserirTituloLimparTela("Cadastro de Caixas");
                     MenuCaixa();
                     break;
                 case '3':
-                    InserirTituloLimpar("Cadastro de Amigos");
+                    InserirTituloLimparTela("Cadastro de Amigos");
                     MenuAmigo();
                     break;
                 case '4':
-                    InserirTituloLimpar("Cadastro de Empréstimos");
+                    InserirTituloLimparTela("Cadastro de Empréstimos");
                     MenuEmprestimo();
                     break;
             }
@@ -77,19 +77,19 @@ namespace ClubeDaLeitura.ConsoleApp
             {
 
                 case '1':
-                    InserirTituloLimpar("Registrar Revistas");
+                    InserirTituloLimparTela("Registrar Revistas");
                     nova_revista.Registrar(revistas, nova_revista);
                     break;
                 case '2':
-                    InserirTituloLimpar("Deletar Revistas");
+                    InserirTituloLimparTela("Deletar Revistas");
                     nova_revista.Deletar(revistas);
                     break;
                 case '3':
-                    InserirTituloLimpar("Editar Revistas");
+                    InserirTituloLimparTela("Editar Revistas");
                     nova_revista.Editar(revistas);
                     break;
                 case '4':
-                    InserirTituloLimpar("Vizualizar Revistas");
+                    InserirTituloLimparTela("Vizualizar Revistas");
                     nova_revista.Vizualizar(revistas);
                     break;
             }
@@ -104,19 +104,19 @@ namespace ClubeDaLeitura.ConsoleApp
             switch (opcao_crud)
             {
                 case '1':
-                    InserirTituloLimpar("Registrar Caixas");
+                    InserirTituloLimparTela("Registrar Caixas");
                     nova_caixa.Registrar(caixas, nova_caixa);
                     break;
                 case '2':
-                    InserirTituloLimpar("Registrar Caixas");
+                    InserirTituloLimparTela("Deletar Caixas");
                     nova_caixa.Deletar(caixas);
                     break;
                 case '3':
-                    InserirTituloLimpar("Registrar Caixas");
+                    InserirTituloLimparTela("Editar Caixas");
                     nova_caixa.Editar(caixas);
                     break;
                 case '4':
-                    InserirTituloLimpar("Registrar Caixas");
+                    InserirTituloLimparTela("Vizualizar Caixas");
                     nova_caixa.Vizualizar(caixas);
                     break;
             }
@@ -126,19 +126,24 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+
             Amigo novo_amigo = new Amigo();
             switch (opcao_crud)
             {
                 case '1':
+                    InserirTituloLimparTela("Registrar Amigos");
                     novo_amigo.Registrar(amigos, novo_amigo);
                     break;
                 case '2':
+                    InserirTituloLimparTela("Inserir Amigos");
                     novo_amigo.Deletar(amigos);
                     break;
                 case '3':
+                    InserirTituloLimparTela("Editar Amigos");
                     novo_amigo.Editar(amigos);
                     break;
                 case '4':
+                    InserirTituloLimparTela("Vizualizar Amigos");
                     novo_amigo.Vizualizar(amigos);
                     break;
             }
@@ -147,20 +152,25 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
-            Emprestimo emprestimo = new Emprestimo();
+
+            Emprestimo novo_emprestimo = new Emprestimo();
             switch (opcao_crud)
             {
                 case '1':
-                    emprestimo.Registrar();
+                    InserirTituloLimparTela("Registrar Empréstimos");
+                    novo_emprestimo.Registrar(emprestimos, novo_emprestimo);
                     break;
                 case '2':
-                    emprestimo.Deletar();
+                    InserirTituloLimparTela("Registrar Empréstimos");
+                    novo_emprestimo.Deletar(emprestimos);
                     break;
                 case '3':
-                    emprestimo.Editar();
+                    InserirTituloLimparTela("Registrar Empréstimos");
+                    novo_emprestimo.Editar(emprestimos);
                     break;
                 case '4':
-                    emprestimo.Vizualizar();
+                    InserirTituloLimparTela("Registrar Empréstimos");
+                    novo_emprestimo.Vizualizar(emprestimos);
                     break;
             }
         }
@@ -181,7 +191,7 @@ namespace ClubeDaLeitura.ConsoleApp
         #endregion
 
         #region Métodos Auxiliares
-        static void InserirTituloLimpar(string mensagem)
+        static void InserirTituloLimparTela(string mensagem)
         {
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;

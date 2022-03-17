@@ -50,16 +50,16 @@ namespace ClubeDaLeitura.ConsoleApp
             Vizualizar(revistas);
 
             Console.Write("\nInforme o ID da revista a ser editada: ");
-            int id_editada = Convert.ToInt32(Console.ReadLine());
+            int id_editar = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Informe o novo tipo de coleção: ");
-            revistas[id_editada].tipo_colecao = Console.ReadLine();
+            revistas[id_editar].tipo_colecao = Console.ReadLine();
 
             Console.Write("Informe o novo número da edição: ");
-            revistas[id_editada].numero_edicao = Convert.ToInt32(Console.ReadLine());
+            revistas[id_editar].numero_edicao = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Informe a novo data de fabricação: ");
-            revistas[id_editada].ano_revista = Console.ReadLine();
+            revistas[id_editar].ano_revista = Console.ReadLine();
 
             Console.WriteLine("Revista editada!");
         }
