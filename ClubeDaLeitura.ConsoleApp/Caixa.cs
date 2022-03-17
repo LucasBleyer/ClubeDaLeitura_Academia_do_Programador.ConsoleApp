@@ -23,6 +23,11 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe o número da caixa: ");
             nova_caixa.numero = Convert.ToInt32(Console.ReadLine());
 
+            DefinePosicaoCaixas(caixas, nova_caixa);
+        }
+
+        static void DefinePosicaoCaixas(Caixa[] caixas, Caixa nova_caixa)
+        {
             for (int i = 0; i < caixas.Length; i++)
             {
                 if (caixas[i] == null)

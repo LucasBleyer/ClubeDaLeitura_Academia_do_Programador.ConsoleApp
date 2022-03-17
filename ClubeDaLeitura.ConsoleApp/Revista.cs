@@ -23,6 +23,11 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe a data de fabricação: ");
             nova_revista.ano_revista = Console.ReadLine();
 
+            DefinePosicaoRevista(revistas, nova_revista);
+        }
+
+        static void DefinePosicaoRevista(Revista[] revistas, Revista nova_revista)
+        {
             for (int i = 0; i < revistas.Length; i++)
             {
                 if (revistas[i] == null)

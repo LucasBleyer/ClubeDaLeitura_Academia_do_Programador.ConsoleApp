@@ -27,6 +27,11 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe o endereço do amigo: ");
             novo_amigo.endereco = Console.ReadLine();
 
+            DefinePosicaoAmigos(amigos, novo_amigo);
+        }
+
+        static void DefinePosicaoAmigos(Amigo[] amigos, Amigo novo_amigo)
+        {
             for (int i = 0; i < amigos.Length; i++)
             {
                 if (amigos[i] == null)

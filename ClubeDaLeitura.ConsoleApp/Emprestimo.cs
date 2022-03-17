@@ -21,6 +21,12 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe a data prevista para a devolução da revista: ");
             novo_emprestimo.data_devolucao = Console.ReadLine();
 
+            DefinePosicaoEmprestimo(emprestimos, novo_emprestimo);
+
+        }
+
+        static void DefinePosicaoEmprestimo(Emprestimo[] emprestimos, Emprestimo novo_emprestimo)
+        {
             for (int i = 0; i < emprestimos.Length; i++)
             {
                 if (emprestimos[i] == null)
@@ -29,7 +35,6 @@ namespace ClubeDaLeitura.ConsoleApp
                     break;
                 }
             }
-
         }
 
         public void Deletar(Emprestimo[] emprestimos)
