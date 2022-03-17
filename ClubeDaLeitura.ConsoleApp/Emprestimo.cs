@@ -15,10 +15,10 @@ namespace ClubeDaLeitura.ConsoleApp
 
         public void Registrar(Emprestimo[] emprestimos, Emprestimo novo_emprestimo)
         {
-            Console.WriteLine("Informe o data do empréstimo: ");
+            Console.Write("Informe o data do empréstimo: ");
             novo_emprestimo.data_emprestimo = Console.ReadLine();
 
-            Console.WriteLine("Informe a data prevista para a devolução da revista: ");
+            Console.Write("Informe a data prevista para a devolução da revista: ");
             novo_emprestimo.data_devolucao = Console.ReadLine();
 
             for (int i = 0; i < emprestimos.Length; i++)
@@ -51,10 +51,10 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe o ID do empréstimo a ser editado: ");
             int id_editar = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Informe a nova data do empréstimo ");
+            Console.Write("Informe a nova data do empréstimo ");
             emprestimos[id_editar].data_emprestimo = Console.ReadLine();
 
-            Console.WriteLine("Informe a nova data prevista para a devolução da revista ");
+            Console.Write("Informe a nova data prevista para a devolução da revista ");
             emprestimos[id_editar].data_devolucao = Console.ReadLine();
 
             Console.WriteLine("Empréstimo editado!");
@@ -64,7 +64,7 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             for (int i = 0; i < emprestimos.Length; i++)
             {
-                if (emprestimos != null)
+                if (emprestimos[i] != null)
                 {
                     Console.WriteLine("Id do empréstimo: " + i);
                     Console.WriteLine("Data do empréstimo: " +emprestimos[i].data_emprestimo);
