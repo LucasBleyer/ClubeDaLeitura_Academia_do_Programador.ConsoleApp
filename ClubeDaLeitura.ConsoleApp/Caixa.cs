@@ -42,24 +42,26 @@ namespace ClubeDaLeitura.ConsoleApp
 
             caixas[id_excluir] = null;
 
-            Console.WriteLine("Revista excluída!");
+            Console.WriteLine("Caixa excluída!");
         }
 
         public void Editar(Caixa[] caixas)
         {
             Vizualizar(caixas);
 
-            Console.Write("\nInforme o ID da revista a ser editada: ");
+            Console.Write("\nInforme o ID da caixa a ser editada: ");
             int id_editada = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Informe o novo tipo de coleção: ");
+            Console.Write("Informe a nova cor da caixa: ");
             caixas[id_editada].cor = Console.ReadLine();
 
-            Console.Write("Informe o novo número da edição: ");
+            Console.Write("Informe a nova etiqueta da caixa: ");
             caixas[id_editada].etiqueta = Console.ReadLine();
 
-            Console.Write("Informe a novo data de fabricação: ");
+            Console.Write("Informe o novo número da caixa: ");
             caixas[id_editada].numero = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Caixa editada!");
         }
 
         public void Vizualizar(Caixa[] caixas)
@@ -69,9 +71,9 @@ namespace ClubeDaLeitura.ConsoleApp
                 if (caixas[i] != null)
                 {
                     Console.WriteLine("\nId: " + i);
-                    Console.WriteLine("Tipo de coleção: " + caixas[i].cor);
-                    Console.WriteLine("Número da Edição: " + caixas[i].etiqueta);
-                    Console.WriteLine("Ano da revista: " + caixas[i].numero);
+                    Console.WriteLine("Cor da caixa: " + caixas[i].cor);
+                    Console.WriteLine("Etiqueta da caixa: " + caixas[i].etiqueta);
+                    Console.WriteLine("Número da caixa: " + caixas[i].numero);
                 }
             }
             Console.ReadLine();
