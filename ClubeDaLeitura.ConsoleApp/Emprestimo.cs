@@ -41,17 +41,37 @@ namespace ClubeDaLeitura.ConsoleApp
 
             emprestimos[id_excluir] = null;
 
-            Console.WriteLine("Empréstimo Excluído!");
+            Console.WriteLine("Empréstimo excluído!");
         }
 
         public void Editar(Emprestimo[] emprestimos)
         {
             Vizualizar(emprestimos);
+
+            Console.Write("Informe o ID do empréstimo a ser editado: ");
+            int id_editar = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Informe a nova data do empréstimo ");
+            emprestimos[id_editar].data_emprestimo = Console.ReadLine();
+
+            Console.WriteLine("Informe a nova data prevista para a devolução da revista ");
+            emprestimos[id_editar].data_devolucao = Console.ReadLine();
+
+            Console.WriteLine("Empréstimo editado!");
         }
 
         public void Vizualizar(Emprestimo[] emprestimos)
         {
-
+            for (int i = 0; i < emprestimos.Length; i++)
+            {
+                if (emprestimos != null)
+                {
+                    Console.WriteLine("Id: " + i);
+                    Console.WriteLine("Data do empréstimo: " +emprestimos[i].data_emprestimo);
+                    Console.WriteLine("Data de devolução: " +emprestimos[i].data_devolucao);
+                }
+            }
+            Console.ReadLine();
         }
     }
 }
