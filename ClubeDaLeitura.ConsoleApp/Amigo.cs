@@ -13,36 +13,78 @@ namespace ClubeDaLeitura.ConsoleApp
         public string telefone;
         public string endereco;
 
-        public void Registrar()
+        public void Registrar(Amigo[] amigos, Amigo novo_amigo)
         {
-            InserirTituloLimparTela("Registrar Amigos");
-            Console.ReadKey();
+            Console.Write("\nInforme o nome do amigo: ");
+            novo_amigo.nome = Console.ReadLine();
+
+            Console.Write("Informe o nome do responsável: ");
+            novo_amigo.nome_responsavel = Console.ReadLine();
+
+            Console.Write("Informe o telefone do amigo: ");
+            novo_amigo.telefone = Console.ReadLine();
+
+            Console.Write("Informe o endereço do amigo: ");
+            novo_amigo.endereco = Console.ReadLine();
+
+            for (int i = 0; i < amigos.Length; i++)
+            {
+                if (amigos[i] == null)
+                {
+                    amigos[i] = novo_amigo;
+                    break;
+                }
+            }
         }
 
-        public void Deletar()
+        public void Deletar(Amigo[] amigos)
         {
-            InserirTituloLimparTela("Deletar Amigos");
-            Console.ReadKey();
+            Vizualizar(amigos);
+
+            Console.Write("Informe o ID do amigo a ser excluído: ");
+            int id_excluir = Convert.ToInt32(Console.ReadLine());
+
+            amigos[id_excluir] = null;
+
+            Console.WriteLine("Amigo excluído!");
         }
 
-        public void Editar()
+        public void Editar(Amigo[] amigos)
         {
-            InserirTituloLimparTela("Editar Amigos");
-            Console.ReadKey();
+            Vizualizar(amigos);
+
+            Console.Write("\nInforme o ID do amigo a ser editado: ");
+            int id_editada = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Informe o nome do amigo: ");
+            amigos[id_editada].nome = Console.ReadLine();
+
+            Console.Write("Informe o nome do responsável: ");
+            amigos[id_editada].nome_responsavel = Console.ReadLine();
+
+            Console.Write("Informe o novo telefone do amigo: ");
+            amigos[id_editada].telefone = Console.ReadLine();
+
+            Console.Write("Informe o novo endereço do amigo: ");
+            amigos[id_editada].endereco = Console.ReadLine();
+
+            Console.WriteLine("Amigo editado!");
         }
 
-        public void Vizualizar()
+        public void Vizualizar(Amigo[] amigos)
         {
-            InserirTituloLimparTela("Vizualizar Amigos");
-            Console.ReadKey();
-        }
-        public void InserirTituloLimparTela(string mensagem)
-        {
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(mensagem);
-            Console.ResetColor();
+            for (int i = 0; i < amigos.Length; i++)
+            {
+                if (amigos[i] != null)
+                {
+                    Console.WriteLine("\nId: " + i);
+                    Console.WriteLine("Nome do amigo: " + amigos[i].nome);
+                    Console.WriteLine("Nome do responsável: " + amigos[i].nome_responsavel);
+                    Console.WriteLine("Telefone do amigo: " + amigos[i].telefone);
+                    Console.WriteLine("Endereço do amigo: " + amigos[i].endereco);
+                }
+            }
+            Console.ReadLine();
         }
     }
 }
