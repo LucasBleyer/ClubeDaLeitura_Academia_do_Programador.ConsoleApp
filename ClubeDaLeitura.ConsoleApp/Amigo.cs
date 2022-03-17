@@ -77,7 +77,7 @@ namespace ClubeDaLeitura.ConsoleApp
             {
                 if (amigos[i] != null)
                 {
-                    Console.WriteLine("\nId: " + i);
+                    Console.WriteLine("\nId do amigo: " + i);
                     Console.WriteLine("Nome do amigo: " + amigos[i].nome);
                     Console.WriteLine("Nome do responsável: " + amigos[i].nome_responsavel);
                     Console.WriteLine("Telefone do amigo: " + amigos[i].telefone);

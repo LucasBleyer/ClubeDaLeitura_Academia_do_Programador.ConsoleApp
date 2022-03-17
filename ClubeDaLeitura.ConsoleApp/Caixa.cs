@@ -70,7 +70,7 @@ namespace ClubeDaLeitura.ConsoleApp
             {
                 if (caixas[i] != null)
                 {
-                    Console.WriteLine("\nId: " + i);
+                    Console.WriteLine("\nId da caixa: " + i);
                     Console.WriteLine("Cor da caixa: " + caixas[i].cor);
                     Console.WriteLine("Etiqueta da caixa: " + caixas[i].etiqueta);
                     Console.WriteLine("Número da caixa: " + caixas[i].numero);

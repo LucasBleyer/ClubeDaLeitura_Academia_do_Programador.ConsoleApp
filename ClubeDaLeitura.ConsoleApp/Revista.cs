@@ -70,7 +70,7 @@ namespace ClubeDaLeitura.ConsoleApp
             {
                 if (revistas[i] != null)
                 {
-                    Console.WriteLine("\nId: " + i);
+                    Console.WriteLine("\nID da revista: " + i);
                     Console.WriteLine("Tipo de coleção: " + revistas[i].tipo_colecao);
                     Console.WriteLine("Número da Edição: " + revistas[i].numero_edicao);
                     Console.WriteLine("Ano da revista: " + revistas[i].ano_revista);

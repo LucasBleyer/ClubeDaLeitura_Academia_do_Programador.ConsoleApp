@@ -66,7 +66,7 @@ namespace ClubeDaLeitura.ConsoleApp
             {
                 if (emprestimos != null)
                 {
-                    Console.WriteLine("Id: " + i);
+                    Console.WriteLine("Id do empréstimo: " + i);
                     Console.WriteLine("Data do empréstimo: " +emprestimos[i].data_emprestimo);
                     Console.WriteLine("Data de devolução: " +emprestimos[i].data_devolucao);
                 }
