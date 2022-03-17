@@ -99,20 +99,25 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
-            Caixa caixa = new Caixa();
+
+            Caixa nova_caixa = new Caixa();
             switch (opcao_crud)
             {
                 case '1':
-                    caixa.Registrar();
+                    InserirTituloLimpar("Registrar Caixas");
+                    nova_caixa.Registrar(caixas, nova_caixa);
                     break;
                 case '2':
-                    caixa.Deletar();
+                    InserirTituloLimpar("Registrar Caixas");
+                    nova_caixa.Deletar(caixas);
                     break;
                 case '3':
-                    caixa.Editar();
+                    InserirTituloLimpar("Registrar Caixas");
+                    nova_caixa.Editar(caixas);
                     break;
                 case '4':
-                    caixa.Vizualizar();
+                    InserirTituloLimpar("Registrar Caixas");
+                    nova_caixa.Vizualizar(caixas);
                     break;
             }
         }
@@ -121,20 +126,20 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
-            Amigo amigo = new Amigo();
+            Amigo novo_amigo = new Amigo();
             switch (opcao_crud)
             {
                 case '1':
-                    amigo.Registrar();
+                    novo_amigo.Registrar(amigos, novo_amigo);
                     break;
                 case '2':
-                    amigo.Deletar();
+                    novo_amigo.Deletar(amigos);
                     break;
                 case '3':
-                    amigo.Editar();
+                    novo_amigo.Editar(amigos);
                     break;
                 case '4':
-                    amigo.Vizualizar();
+                    novo_amigo.Vizualizar(amigos);
                     break;
             }
         }
