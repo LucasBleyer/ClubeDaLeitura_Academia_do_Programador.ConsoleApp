@@ -71,20 +71,25 @@ namespace ClubeDaLeitura.ConsoleApp
         {
             char opcao_crud;
             MostrarOpcoesCRUD(out opcao_crud);
+
             Revista nova_revista = new Revista();
             switch (opcao_crud)
             {
 
                 case '1':
+                    InserirTituloLimpar("Registrar Revistas");
                     nova_revista.Registrar(revistas, nova_revista);
                     break;
                 case '2':
+                    InserirTituloLimpar("Deletar Revistas");
                     nova_revista.Deletar(revistas);
                     break;
                 case '3':
-                    nova_revista.Editar();
+                    InserirTituloLimpar("Editar Revistas");
+                    nova_revista.Editar(revistas);
                     break;
                 case '4':
+                    InserirTituloLimpar("Vizualizar Revistas");
                     nova_revista.Vizualizar(revistas);
                     break;
             }
