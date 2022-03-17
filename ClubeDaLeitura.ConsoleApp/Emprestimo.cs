@@ -22,7 +22,6 @@ namespace ClubeDaLeitura.ConsoleApp
             novo_emprestimo.data_devolucao = Console.ReadLine();
 
             DefinePosicaoEmprestimo(emprestimos, novo_emprestimo);
-
         }
 
         static void DefinePosicaoEmprestimo(Emprestimo[] emprestimos, Emprestimo novo_emprestimo)
@@ -76,6 +75,7 @@ namespace ClubeDaLeitura.ConsoleApp
                     Console.WriteLine("Data de devolução: " +emprestimos[i].data_devolucao);
                 }
             }
+            Console.WriteLine("\n[Enter] para Continuar...");
             Console.ReadLine();
         }
     }

@@ -81,6 +81,7 @@ namespace ClubeDaLeitura.ConsoleApp
                     Console.WriteLine("Ano da revista: " + revistas[i].ano_revista);
                 }
             }
+            Console.WriteLine("[Enter] para Continuar...");
             Console.ReadLine();
         }
     }

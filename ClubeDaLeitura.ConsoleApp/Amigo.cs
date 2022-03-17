@@ -89,6 +89,7 @@ namespace ClubeDaLeitura.ConsoleApp
                     Console.WriteLine("Endereço do amigo: " + amigos[i].endereco);
                 }
             }
+            Console.WriteLine("[Enter] para Continuar...");
             Console.ReadLine();
         }
     }

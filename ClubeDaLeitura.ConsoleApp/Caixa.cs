@@ -81,6 +81,7 @@ namespace ClubeDaLeitura.ConsoleApp
                     Console.WriteLine("Número da caixa: " + caixas[i].numero);
                 }
             }
+            Console.WriteLine("[Enter] para Continuar...");
             Console.ReadLine();
         }
     }
