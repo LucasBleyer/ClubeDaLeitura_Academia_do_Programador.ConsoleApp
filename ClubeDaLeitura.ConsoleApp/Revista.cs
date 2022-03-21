@@ -11,7 +11,7 @@ namespace ClubeDaLeitura.ConsoleApp
         public string tipo_colecao;
         public int numero_edicao;
         public string ano_revista;
-
+        
         public void Registrar(Revista[] revistas, Revista nova_revista)
         {
             Console.Write("\nInforme o tipo de coleção: ");
