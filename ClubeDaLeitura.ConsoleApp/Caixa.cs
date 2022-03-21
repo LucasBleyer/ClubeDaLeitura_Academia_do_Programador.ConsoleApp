@@ -11,6 +11,7 @@ namespace ClubeDaLeitura.ConsoleApp
         public string cor;
         public string etiqueta;
         public int numero;
+        //public Revista[] revistas;
 
         public void Registrar(Caixa[] caixas, Caixa nova_caixa)
         {
