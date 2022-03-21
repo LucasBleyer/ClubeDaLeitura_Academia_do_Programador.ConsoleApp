@@ -8,8 +8,8 @@ namespace ClubeDaLeitura.ConsoleApp
 {
     internal class Emprestimo
     {
-        public Amigo[] amigos;
-        public Revista[] revistas;
+        //public Amigo[] amigos;
+        //public Revista[] revistas;
         public string data_emprestimo;
         public string data_devolucao;
 
