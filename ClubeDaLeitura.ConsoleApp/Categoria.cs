@@ -18,13 +18,15 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("\nInforme o nome da categoria: ");
             nova_categoria.nome = Console.ReadLine();
 
+            VerificaCategoriaNomeNovidade(nova_categoria);
+
             Console.Write("Informe a quantidade de dias de empréstimo: ");
             nova_categoria.quant_dias_emprestimo = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Informe o ID da revista a ser cadastrada: ");
             nova_categoria.id_revista = Convert.ToInt32(Console.ReadLine());
 
-            DefinePosicaoCategoria(categorias, nova_categoria);     
+            DefinePosicaoCategoria(categorias, nova_categoria);
         }
 
         static void DefinePosicaoCategoria(Categoria[] categorias, Categoria nova_categoria)
@@ -37,6 +39,14 @@ namespace ClubeDaLeitura.ConsoleApp
                     break;
                 }
             }
+        }
+
+        static void VerificaCategoriaNomeNovidade(Categoria nova_categoria)
+        {
+                if (nova_categoria.nome == "Novidade")
+                {
+                    nova_categoria.quant_dias_emprestimo = 3;
+                }
         }
 
         public void Deletar(Categoria[] categorias)
