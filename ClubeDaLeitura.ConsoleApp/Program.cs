@@ -8,6 +8,7 @@ namespace ClubeDaLeitura.ConsoleApp
         public static Caixa[] caixas = new Caixa[100];
         public static Revista[] revistas = new Revista[100];
         public static Emprestimo[] emprestimos = new Emprestimo[100];
+        public static Categoria[] categorias = new Categoria[100];
 
         static void Main(string[] args)
         {
