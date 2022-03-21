@@ -32,14 +32,14 @@ namespace ClubeDaLeitura.ConsoleApp
             do
             {
                 InserirTituloLimparTela("Clube da Leitura");
-                Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Amigo | [4]Empréstimo | [s]Sair");
+                Console.WriteLine("\n[1]Revista | [2]Caixa | [3]Amigo | [4]Empréstimo | [5]Categoria | [s]Sair");
                 Console.Write("\nDigite uma opção: ");
                 opcao_menu_principal = Convert.ToChar(Console.ReadLine().ToLower());
                 if (opcao_menu_principal == 's')
                 {
                     break;
                 }
-            } while (opcao_menu_principal != '1' && opcao_menu_principal != '2' && opcao_menu_principal != '3' && opcao_menu_principal != '4');
+            } while (opcao_menu_principal != '1' && opcao_menu_principal != '2' && opcao_menu_principal != '3' && opcao_menu_principal != '4' && opcao_menu_principal != '5');
             return opcao_menu_principal;
         }
 
@@ -62,6 +62,10 @@ namespace ClubeDaLeitura.ConsoleApp
                 case '4':
                     InserirTituloLimparTela("Cadastro de Empréstimos");
                     MenuEmprestimo();
+                    break;
+                case '5':
+                    InserirTituloLimparTela("Cadastro de Categorias");
+                    MenuCategoria();
                     break;
             }
         }
@@ -162,19 +166,47 @@ namespace ClubeDaLeitura.ConsoleApp
                     novo_emprestimo.Registrar(emprestimos, novo_emprestimo);
                     break;
                 case '2':
-                    InserirTituloLimparTela("Registrar Empréstimos");
+                    InserirTituloLimparTela("Deletar Empréstimos");
                     novo_emprestimo.Deletar(emprestimos);
                     break;
                 case '3':
-                    InserirTituloLimparTela("Registrar Empréstimos");
+                    InserirTituloLimparTela("Editar Empréstimos");
                     novo_emprestimo.Editar(emprestimos);
                     break;
                 case '4':
-                    InserirTituloLimparTela("Registrar Empréstimos");
+                    InserirTituloLimparTela("Vizualizar Empréstimos");
                     novo_emprestimo.Vizualizar(emprestimos);
                     break;
             }
         }
+
+        static void MenuCategoria()
+        {
+            char opcao_crud;
+            MostrarOpcoesCRUD(out opcao_crud);
+
+            Categoria nova_categoria = new Categoria();
+            switch (opcao_crud)
+            {
+                case '1':
+                    InserirTituloLimparTela("Registrar Categoria");
+                    nova_categoria.Registrar(categorias, nova_categoria);
+                    break;
+                case '2':
+                    InserirTituloLimparTela("Deletar Categoria");
+                    nova_categoria.Deletar(categorias);
+                    break;
+                case '3':
+                    InserirTituloLimparTela("Editar Categoria");
+                    nova_categoria.Editar(categorias);
+                    break;
+                case '4':
+                    InserirTituloLimparTela("Vizualizar Categoria");
+                    nova_categoria.Vizualizar(categorias);
+                    break;
+            }
+        }
+
         static char MostrarOpcoesCRUD(out char opcao_crud)
         {
             do
