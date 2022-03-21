@@ -21,7 +21,7 @@ namespace ClubeDaLeitura.ConsoleApp
             Console.Write("Informe a quantidade de dias de empréstimo: ");
             nova_categoria.quant_dias_emprestimo = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Informe o ID da revista a ser cadastrada: ");
+            Console.Write("Informe o ID da revista a ser cadastrada: ");
             nova_categoria.id_revista = Convert.ToInt32(Console.ReadLine());
 
             DefinePosicaoCategoria(categorias, nova_categoria);     
