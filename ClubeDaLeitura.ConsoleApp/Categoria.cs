@@ -43,7 +43,7 @@ namespace ClubeDaLeitura.ConsoleApp
 
         static void VerificaCategoriaNomeNovidade(Categoria nova_categoria)
         {
-                if (nova_categoria.nome == "Novidade")
+                if (nova_categoria.nome == "Novidade" || nova_categoria.nome == "novidade")
                 {
                     nova_categoria.quant_dias_emprestimo = 3;
                 }
